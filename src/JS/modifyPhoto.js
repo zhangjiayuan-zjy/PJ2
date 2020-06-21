@@ -38,7 +38,11 @@ function getCityData(select) {
     })
     return CityArray;
 }
-
+$("#select1").on("change",function () {
+    let value = this.options[this.selectedIndex].innerText;
+    let replace1=document.getElementById("replace1");
+    replace1.innerHTML = value + "<i class='iconfont icon-shangxia'></i>";
+})
 $("#select3").on("change",function () {
     if (this.selectedIndex!=0){
         var value = this.options[this.selectedIndex].value;
