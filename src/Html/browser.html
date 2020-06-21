@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../../fonts/font1/iconfont.css">
+    <link rel="stylesheet" href="../css/browser.css">
+    <link rel="stylesheet" href="../css/footer2.css">
+</head>
+
+<body>
+    <!--导航栏 -->
+    <nav class="clear" id="top">
+        <ul class="nav">
+            <li><a href="./home.html">Home</a></li>
+            <li class="selected"><a href="./browser.html">Browser</a></li>
+            <li><a href="./search.html">Search</a></li>
+            <li class="acount">My Account
+                <ul>
+                    <li><a href="./upload.html"><i class="iconfont icon-shangchuan"></i>Upload</a></li>
+                    <li><a href="./photo.html"><i class="iconfont icon-zhaopian"></i>Photos</a></li>
+                    <li><a href="./favor.html"><i class="iconfont icon-shoucang"></i>Collection</a></li>
+                    <li><a href="../../index.html"><i class="iconfont icon--dengru"></i>Login</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="main clear">
+        <!-- 左边栏浏览热门国家，城市 -->
+        <div class="leftside">
+            <div class="search">
+                <div class="tip">search by title</div>
+                <div class="texticon"><input type="text" name="search" value="">
+                    <div class="icon" onclick="alert('筛选完成')"><i class="iconfont icon-sousuo"></i></div>
+                </div>
+            </div>
+            <div class="hotcountry">
+                <div class="tip">Hot country</div>
+                <ul class="hot">
+                    <li><a href="" onclick="alert('已转到相应页面')">China</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Japan</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Italy</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Finland</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Ireland</a></li>
+                </ul>
+            </div>
+            <div class="hotcountry">
+                <div class="tip">Hot Area</div>
+                <ul class="hot">
+                    <li><a href="" onclick="alert('已转到相应页面')">Beijing</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Shanghai</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">NewYork</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Toronto</a></li>
+                    <li><a href="" onclick="alert('已转到相应页面')">Boston</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 右边栏 筛选框 -->
+        <div class="rightside">
+            <div class="title">Filter</div>
+            <div class="filter clear">
+                <div class="select">
+                    <select name="" id="select1">
+                        <option value="snow">snow</option>
+                        <option value="rain">rain</option>
+                        <option value="moutain">moutain</option>
+                        <option value="animal">animal</option>
+                    </select>
+                    <div class="replace" id="replace1">snow<i class="iconfont icon-shangxia"></i></div>
+                </div>
+
+                <div class="select">
+                    <select name="" id="select2">
+                        <option value="Filter by country">Filter by country</option>
+                        <option value="China">China</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Italy">Italy</option>
+                        <option value="America">America</option>
+                    </select>
+                    <div class="replace" id="replace2">Filter by country<i class="iconfont icon-shangxia"></i></div>
+                </div>
+
+                <div class="select">
+                    <select name="" id="select3">
+                        <option value="Filter by city">Filter by city</option>
+                    </select>
+                    <div class="replace" id="replace3">Filter by city<i class="iconfont icon-shangxia"></i></div>
+                </div>
+                <input type="button" value="Filter" onclick="alert('已筛选')">
+            </div>
+            <!-- 联动代码 -->
+            <script>
+                var select1 = document.getElementById("select1");
+                var select2 = document.getElementById("select2");
+                var select3 = document.getElementById("select3");
+                var r1 = document.getElementById("replace1");
+                var r2 = document.getElementById("replace2");
+                var r3 = document.getElementById("replace3");
+                select1.onchange = function() {
+                    var value = select1.options[select1.selectedIndex].value;
+                    r1.innerHTML = value + "<i class='iconfont icon-shangxia'></i>";
+                }
+                select2.onchange = function() {
+                   
+                    var value = select2.options[select2.selectedIndex].value;
+                    r2.innerHTML = value + "<i class='iconfont icon-shangxia'></i>";
+                    switch (value) {
+                        case "Filter by country":
+                            select3.innerHTML = "<option value='Filter by city' selected>Filter by city</option>";
+                            break;
+                        case "China":
+                            select3.innerHTML = "<option value='Filter by city' selected>Filter by city</option><option value='Shanghai'>Shanghai</option><option value='Kunming'>Kunming</option><option value='Beijing'>Beijing</option><option value='Yantai'>Yantai</option>";
+                            break;
+                        case "Japan":
+                            select3.innerHTML = "<option value='Filter by city' selected>Filter by city</option><option value='Tokyo'>Tokyo</option><option value='Osaka'>Osaka</option><option value='Kamakura'>Kamakura</option>";
+                            break;
+                        case "Italy":
+                            select3.innerHTML = "<option value='Filter by city' selected>Filter by city</option><option value='Roma'>Roma</option><option value='Milan'>Milan</option><option value='Venice'>Venice</option><option value='Florence'>Florence</option>";
+                            break;
+                        case "America":
+                            select3.innerHTML = "<option value='Filter by city' selected>Filter by city</option><option value='New York'>New York</option><option value='San Francisco'>San Francisco</option><option value='Washington'>Washington</option>";
+                            break;
+                        default:
+                            break;
+                    }
+                    var value = select3.options[select3.selectedIndex].value;
+                    r3.innerHTML = value + "<i class='iconfont icon-shangxia'></i>";
+                }
+                select3.onchange = function() {
+                    var value = select3.options[select3.selectedIndex].value;
+                    r3.innerHTML = value + "<i class='iconfont icon-shangxia'></i>";
+                }
+            </script>
+
+            <!-- 筛选图片 -->
+            <div class="img clear">
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6119127716.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6119130918.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6119143988.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6592294487.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6592317633.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6592902825.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6592914823.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6596046267.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/6596048341.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/8152048712.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/8645912379.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/8646991554.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/8710320515.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/8731523536.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/9494475161.jpg" alt="无法显示"></a>
+                </div>
+                <div>
+                    <a href="./detail.html"><img src="../../img/normal/small/9496787858.jpg" alt="无法显示"></a>
+                </div>
+            </div>
+            <!-- 页码 -->
+            <div class="link">
+                <a href="">&lt;</a>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">&gt;</a>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <footer class="footer">
+        Copyright &copy; 2019-2021 Web Fundamental All Rights Reversed 备案号：19302010044
+    </footer>
+
+
+</body>
+
+</html>

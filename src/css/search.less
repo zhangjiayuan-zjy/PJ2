@@ -1,0 +1,124 @@
+.border(@bor,@out){
+    border:@bor;
+    outline: @out;
+}
+.search {
+    width: 85%;
+    border: 1px solid #dcdde1;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    .main {
+        padding: 10px;
+    }
+    .description {
+        margin: 5px 0;
+    }
+    textarea {
+        max-width: 90%;
+        min-width: 90%;
+        height: 5rem;
+        max-height: 6rem;
+        min-height: 6rem;
+        .border(none,none);
+        border: 1px solid #7f8fa6;
+        border-radius: 5px;
+        font-size: 1.3rem;
+    }
+    
+}
+
+h1 {
+    background-color: #dfe6e9;
+    font-size: 1.2em;
+    line-height: 1.7rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.search input[type="text"] {
+    width: 90%;
+    .border(none,none);
+    border: 1px solid #7f8fa6;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin: 5px 0;
+}
+.button [type="button"] {
+    .border(none,none);
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: #d63031;
+    width: 15%;
+    line-height: 2rem;
+    font-size: 1.3rem;
+}
+
+.result {
+    width: 85%;
+    border: 1px solid #dcdde1;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    .main {
+        padding: 10px;
+    }
+    .detail {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        .image {
+            width: 25%;
+            margin-right: 2%;
+            img {
+                width: 100%;
+                min-height: 200px;
+                max-height: 220px;
+            }
+        }
+        .dp {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                font-size: 1.3rem;
+                box-sizing: border-box;
+                height: 20%;
+            }
+            .imagedp {
+                line-height: 1.5rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+            }
+        }
+    }
+    .link {
+        text-align: center;
+        .selected{
+            color: #d63031;
+        }
+        a {
+            margin-right: 5px;
+            padding: 5px;
+            color: #0097e6;
+            &:hover {
+                color: #18dcff;
+            }
+        }
+    }
+}

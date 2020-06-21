@@ -1,0 +1,59 @@
+@tomato:tomato;
+.back(@bgcolor,@color){
+    background-color: @bgcolor;
+    color: @color;
+}
+nav {
+    .back(#333333,whitesmoke);
+    width: 100%;
+    font-size: 1.2em;
+    height: 2.5em;
+    .nav {
+        li {
+            line-height: 2.5em;
+            float: left;
+            text-align: center;
+            width: 7%;
+        }
+        .selected {
+            .back(tomato,white);
+        }
+        li:hover {
+            .back(tomato,white);
+        }
+        .acount {
+            width: 10%;
+            float: right;
+            position: relative;
+            ul {
+                display: none;
+            }
+            &:hover{
+                ul {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    right: 0px;
+                    li {
+                        background-color: #6666CC;
+                        width: 100%;
+                        &:hover {
+                            .back(#9999FF,white);
+                        }
+                    }
+                }
+            }
+        }
+        .iconfont {
+            float: left;
+            margin-left: 2px;
+            font-size: 23px;
+        }
+    }
+}
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
