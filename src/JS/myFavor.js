@@ -29,7 +29,6 @@ function getData(page){
             $(".link").empty();
             getPageBa(page);
         }
-        console.log(data)
     })
 }
 

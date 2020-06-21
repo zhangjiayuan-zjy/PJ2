@@ -33,7 +33,7 @@
                 echo "<li><a href=\"./upload.php\"><i class=\"iconfont icon-shangchuan\"></i>Upload</a></li>";
                 echo "<li><a href=\"./myPhotos.php\"><i class=\"iconfont icon-zhaopian\"></i>Photos</a></li>";
                 echo "<li><a href=\"./myFavor.php\"><i class=\"iconfont icon-shoucang\"></i>Collection</a></li>";
-                echo "<li><a href=\"../functionPHP/logout.php\"><i class=\"iconfont icon--dengru\"></i>Log out</a></li>";
+                echo "<li><a href='./logout.php'><i class=\"iconfont icon--dengru\"></i>Log out</a></li>";
                 echo " </ul>";
             } else{
                 echo "<a href='login.php'>LOGIN</a>";

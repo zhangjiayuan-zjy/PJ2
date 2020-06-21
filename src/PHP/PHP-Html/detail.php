@@ -32,7 +32,7 @@
                     echo "<li><a href=\"./upload.php\"><i class=\"iconfont icon-shangchuan\"></i>Upload</a></li>";
                     echo "<li><a href=\"./myPhotos.php\"><i class=\"iconfont icon-zhaopian\"></i>Photos</a></li>";
                     echo "<li><a href=\"./myFavor.php\"><i class=\"iconfont icon-shoucang\"></i>Collection</a></li>";
-                    echo "<li><a href=\"../functionPHP/logout.php\"><i class=\"iconfont icon--dengru\"></i>Log out</a></li>";
+                    echo "<li><a href='./logout.php'><i class=\"iconfont icon--dengru\"></i>Log out</a></li>";
                     echo " </ul>";
                 } else{
                     echo "<a href='login.php'>LOGIN</a>";
@@ -85,6 +85,10 @@
         //判断是否被收藏
         $query4="select * from travelimagefavor where UID =".$_SESSION["UID"]." and ImageID = ".$imageID;
         $isCollect=$db->query($query4);
+        //计算被收藏数
+        $query5="select * from travelimagefavor where ImageID = ".$imageID;
+        $like=$db->query($query5);
+        $likeNumber=$like->num_rows;
 
         echo $imgArray["Title"];
         echo "</h1>";
@@ -94,7 +98,7 @@
         echo "<div class=\"message\">";
         echo "<div class=\"number list\">";
         echo "<h2>Like Number</h2>";
-        echo " <div class=\"content\"> 100</div>";
+        echo " <div class=\"content\">".$likeNumber."</div>";
         echo "</div>";
         echo "<div class=\"contents list\">";
         echo "<h2>Image</h2>";

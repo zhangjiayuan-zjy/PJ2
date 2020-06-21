@@ -11,7 +11,6 @@ $("#select2").on("change",function () {
     replace2.innerHTML = value + "<i class='iconfont icon-shangxia'></i>";
     if (this.selectedIndex!=0){
         var data=getCityData(this);
-        console.log(data)
         if (data){
             $("#select3").empty();
             let firstOption=$("<option>Filter by city</option>");
@@ -104,8 +103,6 @@ function getData(page,hot){
     var hotCountry=($(hot).attr("data-ISO")==null)?"null":$(hot).attr("data-ISO");
     var hotTitle=($(hot).attr("data-title")==null)?"null":$(hot).attr("data-title");
     var inputTitle=($("#title").val=="")?"null":$("#title").val();
-    console.log(hotCountry)
-    //$(location).attr("href","../functionPHP/countryFilter.php?hotCountry="+hotCountry+"&startIndex="+(page-1))
     $.post(url,{
         content:content,
         cityID:city,

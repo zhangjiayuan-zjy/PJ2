@@ -55,7 +55,7 @@ if (isset($_GET["submit"])){
 }
 ?>
         </span>
-    <form action="./signin.php" method="GET" onsubmit="return checkAll()">
+    <form action="signup.php" method="GET" onsubmit="return checkAll()">
         <div class="input">
             <input type="text" required name="username" id="username">
             <label>用户名</label>

@@ -4,4 +4,4 @@ unset($_SESSION["username"]);
 unset($_SESSION["UID"]);
 session_destroy();
 
-header("location:../../../index.php");
+header("location:./login.php");

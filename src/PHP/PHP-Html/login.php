@@ -79,7 +79,7 @@ else{
 </div>
 <div class="register">
     还没有账户？
-    <a href="signin.php">点击注册
+    <a href="signup.php">点击注册
     </a>
     <!-- 跳转注册页面 -->
 </div>
