@@ -115,7 +115,7 @@
         echo "</div>";
         echo "<div class=\"input\">";
         if ($isCollect->num_rows==1){
-            echo "<input type=\"button\" id='collect' value=\"Collected\"></div>";
+            echo "<input type=\"button\" id='collect' value=\"Collected\" data-ImageID='".$imageID."'></div>";
         }else{
             echo "<input type=\"button\" id='collect' value='Collect' data-UID='".$UID."' data-ImageID='".$imageID."'></div>";
         }
